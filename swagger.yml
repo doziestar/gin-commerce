@@ -1,0 +1,128 @@
+host: 0.0.0.0:8000
+basePath: /api/v1
+consumes:
+  - application/com.doziestar.ecommerce.v1+json
+info:
+  description: Working on golang ecommerce application
+  title: Ecommerce application
+  version: 1.0.0
+# paths: {}
+produces:
+  - application/com.doziestar.ecommerce.v1+json
+schemes:
+  - http
+swagger: '2.0'
+paths:
+  /products:
+    get:
+      operationId: getProducts
+      parameters:
+        - description: The ID of the product
+          in: path
+          name: productId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: A product
+          schema:
+            $ref: '#/definitions/Product'
+        '404':
+          description: Product not found
+          schema:
+            $ref: '#/definitions/Error'
+    # /products:
+    post:
+      operationId: createProduct
+      parameters:
+        - description: The product to create
+          in: body
+          name: product
+          required: true
+          schema:
+            $ref: '#/definitions/Product'
+      responses:
+        '201':
+          description: A product
+          schema:
+            $ref: '#/definitions/Product'
+        '400':
+          description: Invalid product
+          schema:
+            $ref: '#/definitions/Error'
+  /products/{productId}:
+    delete:
+      operationId: deleteProduct
+      parameters:
+        - description: The ID of the product
+          in: path
+          name: productId
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Product deleted
+        '404':
+          description: Product not found
+          schema:
+            $ref: '#/definitions/Error'
+    # /products/{productId}:
+    get:
+      operationId: getProduct
+      parameters:
+        - description: The ID of the product
+          in: path
+          name: productId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: A product
+          schema:
+            $ref: '#/definitions/Product'
+        '404':
+          description: Product not found
+          schema:
+            $ref: '#/definitions/Error'
+    # /products/{productId}:/
+    put:
+      operationId: updateProduct
+      parameters:
+        - description: The ID of the product
+          in: path
+          name: productId
+          required: true
+
+definitions:
+  Error:
+    properties:
+      message:
+        type: string
+  Product:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      quantity:
+        type: number
+  ProductRequest:
+    properties:
+      name:
+        type: string
+      price:
+        type: number
+      quantity:
+        type: number
+  ProductResponse:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      quantity:
+        type: number
