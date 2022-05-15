@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gin-boilerplate/pkg/config"
-	"gin-boilerplate/pkg/database"
-	"gin-boilerplate/pkg/logger"
-	"gin-boilerplate/routers"
+	"gin-commerce/pkg/config"
+	"gin-commerce/pkg/database"
+	"gin-commerce/pkg/logger"
+	"gin-commerce/routers"
 )
 
 func main() {
