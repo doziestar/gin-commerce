@@ -1,7 +1,7 @@
 package database
 
 import (
-	"gin-boilerplate/models"
+	"gin-commerce/models"
 )
 
 //Add list of model add for migrations

@@ -1,4 +1,4 @@
-module gin-boilerplate
+module gin-commerce
 
 go 1.17
 

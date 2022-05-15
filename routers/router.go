@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"gin-boilerplate/routers/middleware"
+	"gin-commerce/routers/middleware"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	"gorm.io/gorm"
